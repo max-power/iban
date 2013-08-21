@@ -1,307 +1,309 @@
-# Source: http://en.wikipedia.org/wiki/International_Bank_Account_Number#IBAN_formats_by_country
-al:
+# http://en.wikipedia.org/wiki/International_Bank_Account_Number#IBAN_formats_by_country
+# http://www.swift.com/dsp/resources/documents/IBAN_Registry.pdf
+
+al: # Albania
   length: 28
   regexp: '\d{8}[A-Z0-9]{16}'
 
-ad:
+ad: # Andorra
   length: 24
-  regexp: '\d{8}[A-Z0-9]{12}'
+  regexp: '\d{8}[A-Z0-9]{12}' #'\(d{4})(\d{4})([A-Z0-9]{12})'
 
-at:
+at: # Austria
   length: 20
-  regexp: '\d{16}'
+  regexp: '\d{16}' # '(\d{5})(\d{11})'
 
-az:
+az: # Azerbaijan
   length: 28
   regexp: '[A-Z0-9]{4}\d{20}'
 
-bh:
+bh: # Bahrain
   length: 22
   regexp: '[A-Z]{4}[A-Z0-9]{14}'
   
-be:
+be: # Belgium
   length: 16
-  regexp: '\d{12}'
+  regexp: '\d{12}' #'(\d{3})(\d{7})(\d{2})'
   
-ba:
+ba: # Bosnia and Herzegovina
   length: 20
-  regexp: '\d{16}'
+  regexp: '\d{16}' # '\(d{3})(\d{3})(\d{8})(\d{2})'
   
-br:
+br: # Brazil
   length: 29
-  regexp: '\d{23}[A-Z][A-Z0-9]'
+  regexp: '\d{23}[A-Z][A-Z0-9]' #'\d{8}\d{5}\d{10}[A-Z][A-Z0-9]'
   
-br:
-  length: 29
-  regexp: '\d{23}[A-Z][A-Z0-9]'
-
-bg:
+bg: # Bulgaria
   length: 22
-  regexp: '[A-Z]{4}\d{6}[A-Z0-9]{8}'
+  regexp: '[A-Z]{4}\d{6}[A-Z0-9]{8}' # '([A-Z]{4})(\d{4})(\d{2})([A-Z0-9]{8})'
 
-cr:
+cr: # Costa Rica
   length: 21
-  regexp: '\d{17}'
+  regexp: '\d{17}' # '(\d{13})(\d{14})'
 
-hr:
+hr: # Croatia
   length: 21
-  regexp: '\d{17}'
+  regexp: '\d{17}' # '(\d{7})(\d{10})'
   
-cy:
+cy: # Cyprus
   length: 28
-  regexp: '\d{8}[A-Z0-9]{16}'
+  regexp: '\d{8}[A-Z0-9]{16}' # '(\d{3})(\d{5})([A-Z0-9]{16})'
 
-cz:
+cz: # Czech Republic
   length: 24
-  regexp: '\d{20}'
+  regexp: '\d{20}' # '(\d{4})(\d{6})(\d{10})'
   
-dk:
+de: # Germany
+  length: 22
+  regexp: '\d{18}' # '(\d{8})(\d{10})'
+  
+dk: # Denmark
   length: 18
-  regexp: '\d{14}'
+  regexp: '\d{14}' # '(\d{4})(\d{9})(\d{1})'
 
-do:
+do: # Dominican Republic
   length: 28
   regexp: '[A-Z]{4}\d{20}'
 
-ee:
+ee: # Estonia
   length: 20
-  regexp: '\d{16}'
+  regexp: '\d{16}' # '(\d{2})(\d{2})(\d{11})(\d{1})'
+
+fi: # Finland
+  length: 18
+  regexp: '\d{14}'
+
+fr: # France
+  length: 27
+  regexp: '\d{10}[A-Z0-9]{11}\d{2}' # '(\d{5})(\d{5})([A-Z0-9]{11})(\d{2})'
 
 fo:
   length: 18
   regexp: '\d{14}'
 
-fi:
-  length: 18
-  regexp: '\d{14}'
-
-fr:
-  length: 27
-  regexp: '\d{10}[A-Z0-9]{11}\d{2}'
-
-de:
+ge: # Georgia
   length: 22
-  regexp: '\d{18}'
-  
-gi:
-  length: 23
-  regexp: '[A-Z]{4}[A-Z0-9]{15}'
+  regexp: '[A-Z]{2}\d{16}'
 
-gr:
-  length: 27
-  regexp: '\d{7}[A-Z0-9]{16}'
+gi: # Gibraltar
+  length: 23
+  regexp: '[A-Z]{4}[A-Z0-9]{15}' #'([A-Z]{4})([A-Z0-9]{15})'
 
 gl:
   length: 18
   regexp: '\d{14}'
 
-gt:
+gr: # Greece
+  length: 27
+  regexp: '\d{7}[A-Z0-9]{16}' # '(\d{4})(\d{3})([A-Z0-9]{16})'
+
+gt: # Guatemala
   length: 28
   regexp: '[A-Z0-9]{4}[A-Z0-9]{20}'
 
-hu:
+hu: # Hungary
   length: 28
-  regexp: '\d{24}'
+  regexp: '\d{24}' # '(\d{3})(\d{4})(\d{1})(\d{15})(\d{1})'
   
-is:
+is: # Iceland
   length: 26
-  regexp: '\d{22}'
+  regexp: '\d{22}' # '(\d{4})(\d{2})(\d{6})(\d{10})'
 
-ie:
+ie: # Ireland
   length: 22
-  regexp: '[A-Z0-9]{4}\d{14}'
+  regexp: '[A-Z0-9]{4}\d{14}' # '([A-Z0-9]{4})(\d{6})(\d{8})'
 
-il:
+il: # Israel
   length: 23
-  regexp: '\d{19}'
+  regexp: '\d{19}' # '(\d{3})(\d{3})(\d{13})'
 
-it:
+it: # Italy
   length: 27
-  regexp: '[A-Z]\d{10}[A-Z0-9]{12}'
+  regexp: '[A-Z]\d{10}[A-Z0-9]{12}' # '([A-Z])(\d{5})(\d{5})([A-Z0-9]{12})'
 
-kz:
+kz: # Kazakhstan
   length: 20
   regexp: '\d{3}[A-Z0-9]{13}'
 
-kw:
+kw: # Kuwait
   length: 30
   regexp: '[A-Z]{4}[A-Z0-9]{22}'
 
-lv:
+lv: # Latvia
   length: 21
   regexp: '[A-z]{4}[A-Z0-9]{13}'
 
-lb:
+lb: # Lebanon
   length: 28
   regexp: '\d{4}[A-Z0-9]{20}'
 
-li:
+li: # Liechtenstein
   length: 21
   regexp: '\d{5}[A-Z0-9]{12}'
 
-lt:
+lt: # Lithuania
   length: 20
-  regexp: '\d{16}'
+  regexp: '\d{16}' # '(\d{5})(\d{11})'
 
-lu: 
+lu: # Luxembourg
   length: 20
   regexp: '\d{3}[A-Z0-9]{13}'
 
-mk:
+mk: # Macedonia
   length: 19
   regexp: '\d{3}[A-Z0-9]{10}\d{2}'
 
-mt:
+mt: # Malta
   length: 31
   regexp: '[A-Z]{4}\d{5}[A-Z0-9]{18}'
 
-mr:
+mr: # Mauritania
   length: 27
-  regexp: '\d{23}'
+  regexp: '\d{23}' # '(\d{5})(\d{5})(\d{11})(\d{2})'
   
-mu:
+mu: # Mauritius
   length: 30
-  regexp: '[A-Z]{4}\d{19}[A-Z]{3}'
+  regexp: '[A-Z]{4}\d{19}[A-Z]{3}' # '([A-Z]{4})(\d{4})(\d{2})(\d{2})(\d{12})(\d{3})([A-Z]{3})'
 
-mc:
+mc: # Monaco
   length: 27
-  regexp: '\d{10}[A-Z0-9]{11}\d{2}'
+  regexp: '\d{10}[A-Z0-9]{11}\d{2}' # '(\d{5})(\d{5})([A-Z0-9]{11})(\d{2})'
 
-md:
+md: # Moldova
   length: 24
-  regexp: '[A-Z0-9]{2}\d{18}'
+  regexp: '[A-Z0-9]{2}\d{18}' 
 
-me:
+me: # Montenegro
   length: 22
-  regexp: '\d{18}'
+  regexp: '\d{18}' # '(\d{3})(\d{13})(\d{2})'
   
-nl:
+nl: # Netherlands
   length: 18
   regexp: '[A-Z]{4}\d{10}'
   
-'no':
+'no': # Norway
   length: 15
-  regexp: '\d{11}'
+  regexp: '\d{11}' # '(\d{4})(\d{6})(\d{1})'
   
-pk:
+pk: # Pakistan
   length: 24
   regexp: '[A-Z0-9]{4}\d{16}'
   
-ps:
+ps: # Palestine
   length: 29
   regexp: '[A-Z0-9]{4}\d{21}'
   
-pl:
+pl: # Poland
   length: 28
-  regexp: '\d{24}'
+  regexp: '\d{24}' # '(\d{9})(\d{16})'
   
-pt:
+pt: # Portugal
   length: 25
-  regexp: '\d{21}'
+  regexp: '\d{21}' # '(\d{4})(\d{4})(\d{11})(\d{2})'
   
-ro:
+ro: # Romania
   length: 24
   regexp: '[A-Z]{4}[A-Z0-9]{16}'
 
-sm:
+sm: # San Marino
   length: 27
-  regexp: '[A-Z]\d{10}[A-Z0-9]{12}'
+  regexp: '[A-Z]\d{10}[A-Z0-9]{12}' # '([A-Z])(\d{5})(\d{5})([A-Z0-9]{12})'
 
-sa:
+sa: # Saudi Arabia
   length: 24
   regexp: '\d{2}[A-Z0-9]{18}'
 
-rs:
+rs: # Serbia
   length: 22
-  regexp: '\d{18}'
+  regexp: '\d{18}' # '(\d{3})(\d{13})(\d{2})'
   
-sk:
+sk: # Slovak Republic
   length: 24
-  regexp: '\d{20}'
+  regexp: '\d{20}' # '(\d{4})(\d{6})(\d{10})'
 
-si:
+si: # Slovenia
   length: 19
-  regexp: '\d{15}'
+  regexp: '\d{15}' # '(\d{5})(\d{8})(\d{2})'
   
-es:
+es: # Spain
   length: 24
-  regexp: '\d{20}'
+  regexp: '\d{20}' # '(\d{4})(\d{4})(\d{1})(\d{1})(\d{10})'
   
-se:
+se: # Sweden
   length: 24
-  regexp: '\d{20}'
+  regexp: '\d{20}' # '(\d{3})(\d{16})(\d{1})'
 
-ch:
+ch: # Switzerland
   length: 21
   regexp: '\d{5}[A-Z0-9]{12}'
 
-tn:
+tn: # Tunisia
   length: 24
-  regexp: '\d{20}'
+  regexp: '\d{20}' # '(\d{2})(\d{3})(\d{13})(\d{2})'
 
-tr:
+tr: # Turkey
   length: 26
-  regexp: '\d{5}[A-Z0-9]{17}'
+  regexp: '\d{5}[A-Z0-9]{17}' # '(\d{5})([A-Z0-9]{16})([A-Z0-9])'
   
-ae:
+ae: # United Arab Emirates
   length: 23
   regexp: '\d{3}\d{16}'
   
-gb:
+gb: # United Kingdom
   length: 22
-  regexp: '[A-Z]{4}\d{14}'
+  regexp: '[A-Z]{4}\d{14}' # '([A-Z]{4})(\d{6})(\d{8})'
   
-vg:
+vg: # Virgin Islands, British
   length: 24
   regexp: '[A-Z0-9]{4}\d{16}'
 
 # In addition to the above list, Nordea has catalogued IBANs for countries listed below.[32]
 
-ao:
+ao: # Angola
   length: 25
   regexp: '\d{21}'
 
-bj:
+bj: # Benin
   length: 28
   regexp: '[A-Z]\d{23}'
 
-bf:
+bf: # Burkina Faso
   length: 27
   regexp: '\d{23}'
 
-bi:
+bi: # Burundi
   length: 16
   regexp: '\d{12}'
 
-cm:
+cm: # Cameroon
   length: 27
   regexp: '\d{23}'
 
-cv:
+cv: # Cape Verde
   length: 25
   regexp: '\d{21}'
 
-ir:
+ir: # Iran
   length: 26
   regexp: '\d{22}'
 
-ci:
+ci: # Ivory Coast
   length: 28
   regexp: '[A-Z]\d{23}'
 
-mg:
+mg: # Madagascar
   length: 27
   regexp: '\d{23}'
 
-ml:
+ml: # Mali
   length: 28
   regexp: '[A-Z]\d{23}'
 
-mz:
+mz: # Mozambique
   length: 25
   regexp: '\d{21}'
 
-sn:
+sn: # Senegal
   length: 28
   regexp: '[A-Z]\d{23}'
 
@@ -321,10 +323,6 @@ sn:
 #
 # ga: # Gabun
 #   length: 27
-#   regexp: ''
-#
-# ge: # Georgia
-#   length: 22
 #   regexp: ''
 #
 # ua: # Ukraine
