@@ -2,6 +2,8 @@
 
 IBAN validation and formatting
 
+[![Build Status](https://travis-ci.org/max-power/iban.png?branch=master)](https://travis-ci.org/max-power/iban)
+
 ## Installation
 
 Add this line to your application's Gemfile:
