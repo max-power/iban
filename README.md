@@ -1,4 +1,4 @@
-# IBAN: International Bank Account Number
+# International Bank Account Number
 
 IBAN validation and formatting
 
