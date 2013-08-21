@@ -11,8 +11,8 @@ describe IBAN do
   end
   
   it "should load the validation rules" do
-    IBAN.validation_specs.wont_be :empty?
-    IBAN.validation_specs.must_be_kind_of Hash
+    IBAN.specifications.wont_be :empty?
+    IBAN.specifications.must_be_kind_of Hash
   end
 
   it "should return the county code" do

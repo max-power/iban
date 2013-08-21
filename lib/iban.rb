@@ -1,7 +1,7 @@
 require 'yaml'
 
 class IBAN
-  def self.validation_specs
+  def self.specifications
     @@specs ||= YAML.load_file(File.expand_path('iban/specs.yml', File.dirname(__FILE__)))
   end
   
@@ -48,16 +48,16 @@ class IBAN
   end
   
   def valid_length?
-    !!validation_spec && validation_spec['length'] == @code.length
+    !!specification && specification['length'] == @code.length
   end
   
   def valid_bban?
-    !!validation_spec && !!(bban =~ Regexp.new("^#{validation_spec['regexp']}$"))
+    !!specification && !!(bban =~ Regexp.new("^#{specification['regexp']}$"))
   end
   
   private
   
-  def validation_spec
-    self.class.validation_specs[country_code.downcase]
+  def specification
+    self.class.specifications[country_code.downcase]
   end
 end
