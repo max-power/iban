@@ -2,9 +2,11 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
+require 'iban/version'
+
 Gem::Specification.new do |spec|
   spec.name          = "IBAN"
-  spec.version       = "0.0.1"
+  spec.version       = IBAN::VERSION
   spec.authors       = ["Kevin"]
   spec.email         = ["kevin.melchert@gmail.com"]
   spec.description   = %q{IBAN: International Bank Account Number}
