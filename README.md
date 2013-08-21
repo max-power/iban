@@ -30,6 +30,10 @@ Or install it yourself as:
     iban.to_s(true)   # 'GR16 0110 1250 0000 0001 2300 695'
 
     iban.to_i         # 1101250000000012300695162716
+    
+    # or 
+    
+    IBAN.valid? 'GR16 0110 1250 0000 0001 2300 695' # true
 
 
 ## Contributing
