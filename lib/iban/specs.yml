@@ -1,7 +1,7 @@
 # Source: http://en.wikipedia.org/wiki/International_Bank_Account_Number#IBAN_formats_by_country
 al:
   length: 28
-  regexp: '\d{8}\[A-Z0-9]{16}'
+  regexp: '\d{8}[A-Z0-9]{16}'
 
 ad:
   length: 24
@@ -85,7 +85,7 @@ de:
   
 gi:
   length: 23
-  regexp: '[A-Z]{5}[A-Z0-9]{15}'
+  regexp: '[A-Z]{4}[A-Z0-9]{15}'
 
 gr:
   length: 27
@@ -192,7 +192,7 @@ ps:
   regexp: '[A-Z0-9]{4}\d{21}'
   
 pl:
-  length: 29
+  length: 28
   regexp: '\d{24}'
   
 pt:
@@ -232,7 +232,7 @@ se:
   regexp: '\d{20}'
 
 ch:
-  length: 24
+  length: 21
   regexp: '\d{5}[A-Z0-9]{12}'
 
 tn:
@@ -263,7 +263,7 @@ ao:
 
 bj:
   length: 28
-  regexp: '[A-Z]\d23'
+  regexp: '[A-Z]\d{23}'
 
 bf:
   length: 27
@@ -304,3 +304,29 @@ mz:
 sn:
   length: 28
   regexp: '[A-Z]\d{23}'
+
+# not quite sure about these:
+
+# cg: # Republic Congo
+#   length: 27
+#   regexp: ''
+#
+# dz: # Algeria
+#   length: 24
+#   regexp: ''
+#
+# eg: # Egypt
+#   length: 27
+#   regexp: ''
+#
+# ga: # Gabun
+#   length: 27
+#   regexp: ''
+#
+# ge: # Georgia
+#   length: 22
+#   regexp: ''
+#
+# ua: # Ukraine
+#  length: 29
+#  regexp: ''
