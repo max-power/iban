@@ -26,8 +26,8 @@ Or install it yourself as:
 
     iban.valid?       # true
 
-    iban.to_s         # 'GR16 0110 1250 0000 0001 2300 695'
-    iban.to_s(false)  # 'GR1601101250000000012300695'
+    iban.to_s         # 'GR1601101250000000012300695'
+    iban.to_s(true)   # 'GR16 0110 1250 0000 0001 2300 695'
 
     iban.to_i         # 1101250000000012300695162716
 

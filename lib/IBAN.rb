@@ -29,7 +29,7 @@ class IBAN
     end.join.to_i
   end
   
-  def to_s(formatted=true)
+  def to_s(formatted=false)
     formatted ? @code.gsub(/(.{4})/, '\1 ').strip : @code
   end
 end
