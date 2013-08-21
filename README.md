@@ -1,12 +1,12 @@
-# IBAN
+# IBAN: International Bank Account Number
 
-TODO: Write a gem description
+IBAN validation and formatting
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'IBAN'
+    gem 'iban'
 
 And then execute:
 
@@ -14,11 +14,23 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install IBAN
+    $ gem install iban
 
 ## Usage
 
-TODO: Write usage instructions here
+    iban = IBAN.new('GR16 0110 1250 0000 0001 2300 695')
+
+    iban.country_code # GR
+    iban.check_digits # 16
+    iban.bban         # 01101250000000012300695
+
+    iban.valid?       # true
+
+    iban.to_s         # 'GR16 0110 1250 0000 0001 2300 695'
+    iban.to_s(false)  # 'GR1601101250000000012300695'
+
+    iban.to_i         # 1101250000000012300695162716
+
 
 ## Contributing
 
