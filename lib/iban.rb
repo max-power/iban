@@ -24,6 +24,14 @@ class IBAN
   def bban
     @code[4..-1]
   end
+  
+  def account_number
+    bban_matches[:account_number]
+  end
+  
+  def bank_identifier
+    bban_matches[:bank_identifier]
+  end
     
   def to_i
     "#{bban}#{country_code}#{check_digits}".each_byte.map do |byte|
@@ -52,12 +60,16 @@ class IBAN
   end
   
   def valid_bban?
-    !!specification && !!(bban =~ Regexp.new("^#{specification['regexp']}$"))
+    !!specification && !!bban_matches
   end
   
   private
   
   def specification
     self.class.specifications[country_code.downcase]
+  end
+  
+  def bban_matches
+    Regexp.new("^#{specification['regex2']}$").match(bban)
   end
 end
