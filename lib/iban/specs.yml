@@ -29,22 +29,22 @@ bh: # Bahrain
 be: # Belgium
   length: 16
   regexp: '\d{12}'
-  regex2: '(\d{3})(\d{7})(\d{2})'
+  regex2: '(?<bank_identifier>\d{3})(?<account_number>\d{7})(?<national_check_digits>\d{2})'
   
 ba: # Bosnia and Herzegovina
   length: 20
   regexp: '\d{16}'
-  regex2: '(\d{3})(\d{3})(\d{8})(\d{2})'
+  regex2: '(?<bank_identifier>\d{3})(?<branch_identifier>\d{3})(?<account_number>\d{8})(?<national_check_digits>\d{2})'
   
 br: # Brazil
   length: 29
   regexp: '\d{23}[A-Z][A-Z0-9]'
-  regex2: '\d{8}\d{5}\d{10}[A-Z][A-Z0-9]'
+  regex2: '(?<bank_identifier>\d{8})(?<branch_identifier>\d{5})(?<account_number>\d{10})(?<account_type>[A-Z])(?<account_owner>[A-Z0-9])'
   
 bg: # Bulgaria
   length: 22
   regexp: '[A-Z]{4}\d{6}[A-Z0-9]{8}'
-  regex2: '([A-Z]{4})(\d{4})(\d{2})([A-Z0-9]{8})'
+  regex2: '(?<bank_identifier>[A-Z]{4})(?<branch_identifier>\d{4})(?<account_type>\d{2})(?<account_number>[A-Z0-9]{8})'
 
 cr: # Costa Rica
   length: 21
@@ -59,12 +59,12 @@ hr: # Croatia
 cy: # Cyprus
   length: 28
   regexp: '\d{8}[A-Z0-9]{16}'
-  regex2: '(\d{3})(\d{5})([A-Z0-9]{16})'
+  regex2: '(?<bank_identifier>\d{3})(?<branch_identifier>\d{5})(?<account_number>[A-Z0-9]{16})'
 
 cz: # Czech Republic
   length: 24
   regexp: '\d{20}'
-  regex2: '(\d{4})(\d{6})(\d{10})'
+  regex2: '(?<bank_identifier>\d{4})(?<account_number>\d{6}\d{10})'
   
 de: # Germany
   length: 22
@@ -74,52 +74,52 @@ de: # Germany
 dk: # Denmark
   length: 18
   regexp: '\d{14}'
-  regex2: '(\d{4})(\d{9})(\d{1})'
+  regex2: '(?<bank_identifier>\d{4})(?<account_number>\d{9})(?<national_check_digits>\d{1})'
+
+gl: # Greenland (same as Denmark)
+  length: 18
+  regexp: '\d{14}'
+  regex2: '(?<bank_identifier>\d{4})(?<account_number>\d{9})(?<national_check_digits>\d{1})'
+
+fo: # Faroe Islands (same as Denmark)
+  length: 18
+  regexp: '\d{14}'
+  regex2: '(?<bank_identifier>\d{4})(?<account_number>\d{9})(?<national_check_digits>\d{1})'
 
 do: # Dominican Republic
   length: 28
   regexp: '[A-Z]{4}\d{20}'
-  regex2: '([A-Z]{4})(\d{20})'
+  regex2: '(?<bank_identifier>[A-Z]{4})(?<account_number>\d{20})'
 
 ee: # Estonia
   length: 20
   regexp: '\d{16}'
-  regex2: '(\d{2})(\d{2})(\d{11})(\d{1})'
+  regex2: '(?<bank_identifier>\d{2})(?<branch_identifier>\d{2})(?<account_number>\d{11})(?<national_check_digits>\d{1})'
 
 fi: # Finland
   length: 18
   regexp: '\d{14}'
-  regex2: '\d{14}'
+  regex2: '(?<bank_identifier>\d{6})(?<account_number>\d{7})(?<national_check_digits>\d{1})'
 
 fr: # France
   length: 27
   regexp: '\d{10}[A-Z0-9]{11}\d{2}'
-  regex2: '(\d{5})(\d{5})([A-Z0-9]{11})(\d{2})'
-
-fo:
-  length: 18
-  regexp: '\d{14}'
-  regex2: '\d{14}'
+  regex2: '(?<bank_identifier>\d{5})(?<branch_identifier>\d{5})(?<account_number>[A-Z0-9]{11})(?<national_check_digits>\d{2})'
 
 ge: # Georgia
   length: 22
   regexp: '[A-Z]{2}\d{16}'
-  regex2: '[A-Z]{2}\d{16}'
+  regex2: '(?<bank_identifier>[A-Z]{2})(?<account_number>\d{16})'
 
 gi: # Gibraltar
   length: 23
   regexp: '[A-Z]{4}[A-Z0-9]{15}'
   regex2: '(?<bank_identifier>[A-Z]{4})(?<account_number>[A-Z0-9]{15})'
 
-gl:
-  length: 18
-  regexp: '\d{14}'
-  regex2: '\d{14}'
-
 gr: # Greece
   length: 27
   regexp: '\d{7}[A-Z0-9]{16}'
-  regex2: '(\d{4})(\d{3})([A-Z0-9]{16})'
+  regex2: '(?<bank_identifier>\d{4})(?<branch_identifier>\d{3})(?<account_number>[A-Z0-9]{16})'
 
 gt: # Guatemala
   length: 28
@@ -129,27 +129,27 @@ gt: # Guatemala
 hu: # Hungary
   length: 28
   regexp: '\d{24}'
-  regex2: '(\d{3})(\d{4})(\d{1})(\d{15})(\d{1})'
+  regex2: '(?<bank_identifier>\d{3})(?<branch_identifier>\d{4})(?<account_number>\d{1}\d{15})(?<national_check_digits>\d{1})'
   
 is: # Iceland
   length: 26
   regexp: '\d{22}'
-  regex2: '(\d{4})(\d{2})(\d{6})(\d{10})'
+  regex2: '(?<bank_identifier>\d{4})(?<branch_identifier>\d{2})(?<account_number>\d{6}\d{10})'
 
 ie: # Ireland
   length: 22
   regexp: '[A-Z0-9]{4}\d{14}'
-  regex2: '([A-Z0-9]{4})(\d{6})(\d{8})'
+  regex2: '(?<branch_identifier>[A-Z0-9]{4})(?<branch_identifier>\d{6})(?<account_number>\d{8})'
 
 il: # Israel
   length: 23
   regexp: '\d{19}'
-  regex2: '(\d{3})(\d{3})(\d{13})'
+  regex2: '(?<bank_identifier>\d{3})(?<branch_identifier>\d{3})(?<account_number>\d{13})'
 
 it: # Italy
   length: 27
   regexp: '[A-Z]\d{10}[A-Z0-9]{12}'
-  regex2: '([A-Z])(\d{5})(\d{5})([A-Z0-9]{12})'
+  regex2: '(?<national_check_digits>[A-Z])(?<bank_identifier>\d{5})(?<branch_identifier>\d{5})(?<account_number>[A-Z0-9]{12})'
 
 kz: # Kazakhstan
   length: 20
@@ -189,27 +189,27 @@ lu: # Luxembourg
 mk: # Macedonia
   length: 19
   regexp: '\d{3}[A-Z0-9]{10}\d{2}'
-  regex2: '\d{3}[A-Z0-9]{10}\d{2}'
+  regex2: '(?<branch_identifier>\d{3})(?<account_number>[A-Z0-9]{10})(?<national_check_digits>\d{2})'
 
 mt: # Malta
   length: 31
   regexp: '[A-Z]{4}\d{5}[A-Z0-9]{18}'
-  regex2: '[A-Z]{4}\d{5}[A-Z0-9]{18}'
+  regex2: '(?<bank_identifier>[A-Z]{4})(?<branch_identifier>\d{5})(?<account_number>[A-Z0-9]{18})'
 
 mr: # Mauritania
   length: 27
   regexp: '\d{23}'
-  regex2: '(\d{5})(\d{5})(\d{11})(\d{2})'
+  regex2: '(?<bank_identifier>\d{5})(?<branch_identifier>\d{5})(?<account_number>\d{11})(?<national_check_digits>\d{2})'
   
 mu: # Mauritius
   length: 30
   regexp: '[A-Z]{4}\d{19}[A-Z]{3}'
-  regex2: '([A-Z]{4})(\d{2})(\d{2})(\d{12})(\d{3})([A-Z]{3})'
+  regex2: '(?<bank_identifier>[A-Z]{4}\d{2})(?<branch_identifier>\d{2})(?<account_number>\d{12}\d{3}[A-Z]{3})'
 
 mc: # Monaco
   length: 27
   regexp: '\d{10}[A-Z0-9]{11}\d{2}'
-  regex2: '(\d{5})(\d{5})([A-Z0-9]{11})(\d{2})'
+  regex2: '(?<bank_identifier>\d{5})(?<branch_identifier>\d{5})(?<account_number>[A-Z0-9]{11})(?<national_check_digits>\d{2})'
 
 md: # Moldova
   length: 24
@@ -219,7 +219,7 @@ md: # Moldova
 me: # Montenegro
   length: 22
   regexp: '\d{18}'
-  regex2: '(\d{3})(\d{13})(\d{2})'
+  regex2: '(?<bank_identifier>\d{3})(?<account_number>(\d{13})(\d{2}))'
   
 nl: # Netherlands
   length: 18
@@ -229,7 +229,7 @@ nl: # Netherlands
 'no': # Norway
   length: 15
   regexp: '\d{11}'
-  regex2: '(\d{4})(\d{6})(\d{1})'
+  regex2: '(?<bank_identifier>\d{4})(?<account_number>(\d{6})(\d{1}))'
   
 pk: # Pakistan
   length: 24
@@ -249,7 +249,7 @@ pl: # Poland
 pt: # Portugal
   length: 25
   regexp: '\d{21}'
-  regex2: '(\d{4})(\d{4})(\d{11})(\d{2})'
+  regex2: '(?<bank_identifier>\d{4})(?<branch_identifier>\d{4})(?<account_number>\d{11})(?<national_check_digits>\d{2})'
   
 ro: # Romania
   length: 24
@@ -259,7 +259,7 @@ ro: # Romania
 sm: # San Marino
   length: 27
   regexp: '[A-Z]\d{10}[A-Z0-9]{12}'
-  regex2: '([A-Z])(\d{5})(\d{5})([A-Z0-9]{12})'
+  regex2: '(?<national_check_digits>[A-Z])(?<bank_identifier>\d{5})(?<branch_identifier>\d{5})(?<account_number>[A-Z0-9]{12})'
 
 sa: # Saudi Arabia
   length: 24
@@ -269,27 +269,27 @@ sa: # Saudi Arabia
 rs: # Serbia
   length: 22
   regexp: '\d{18}'
-  regex2: '(\d{3})(\d{13})(\d{2})'
+  regex2: '(?<bank_identifier>\d{3})(?<account_number>\d{13})(?<national_check_digits>\d{2})'
   
 sk: # Slovak Republic
   length: 24
   regexp: '\d{20}'
-  regex2: '(\d{4})(\d{6})(\d{10})'
+  regex2: '(?<bank_identifier>\d{4})(?<branch_identifier>\d{6})(?<account_number>\d{10})'
 
 si: # Slovenia
   length: 19
   regexp: '\d{15}'
-  regex2: '(\d{5})(\d{8})(\d{2})'
+  regex2: '(?<bank_identifier>\d{5})(?<account_number>\d{8})(?<national_check_digits>\d{2})'
   
 es: # Spain
   length: 24
   regexp: '\d{20}'
-  regex2: '(\d{4})(\d{4})(\d{1})(\d{1})(\d{10})'
+  regex2: '(?<bank_identifier>\d{4})(?<branch_identifier>\d{4})(\d{1})(\d{1})(?<account_number>\d{10})'
   
 se: # Sweden
   length: 24
   regexp: '\d{20}'
-  regex2: '(?<bank_identifier>\d{3})(\d{16})(\d{1})'
+  regex2: '(?<bank_identifier>\d{3})(?<account_number>\d{16}\d{1})'
 
 ch: # Switzerland
   length: 21
@@ -299,12 +299,12 @@ ch: # Switzerland
 tn: # Tunisia
   length: 24
   regexp: '\d{20}'
-  regex2: '(\d{2})(\d{3})(\d{13})(\d{2})'
+  regex2: '(?<bank_identifier>\d{2})(?<branch_identifier>\d{3})(?<account_number>\d{13}\d{2})'
 
 tr: # Turkey
   length: 26
   regexp: '\d{5}[A-Z0-9]{17}'
-  regex2: '(\d{5})([A-Z0-9]{16})([A-Z0-9])'
+  regex2: '(?<bank_identifier>\d{5})([A-Z0-9])(?<account_number>[A-Z0-9]{16})'
   
 ae: # United Arab Emirates
   length: 23
