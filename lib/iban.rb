@@ -24,19 +24,11 @@ class IBAN
   def bban
     @code[4..-1]
   end
-  
-  def account_number
-    bban_matches[:account_number]
-  end
-  
-  def bank_identifier
-    bban_matches[:bank_identifier]
-  end
     
   def to_i
     "#{bban}#{country_code}#{check_digits}".each_byte.map do |byte|
       case byte
-      when 48..57 then byte - 48 # 0..9 # or byte.chr
+      when 48..57 then byte - 48 # 0..9
       when 65..90 then byte - 55 # A..Z
       else raise RuntimeError.new("Unexpected byte '#{byte}' in IBAN code '#{@code}'")
       end
@@ -60,16 +52,24 @@ class IBAN
   end
   
   def valid_bban?
-    !!specification && !!bban_matches
+    !!bban_data
   end
-  
+
+  def respond_to?(method_name, include_private=false)
+    (bban_data && bban_data.names.include?(method_name.to_s)) || super
+  end
+    
   private
   
   def specification
-    self.class.specifications[country_code.downcase]
+    @specification ||= self.class.specifications[country_code.downcase]
   end
   
-  def bban_matches
-    Regexp.new("^#{specification['regex2']}$").match(bban)
+  def bban_data
+    @bban_data ||= Regexp.new("^#{specification['regex2']}$").match(bban) if specification
+  end
+  
+  def method_missing(method_name, *args)
+    respond_to?(method_name) ? bban_data[method_name] : super
   end
 end
