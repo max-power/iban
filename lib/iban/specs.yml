@@ -109,7 +109,7 @@ ge: # Georgia
 gi: # Gibraltar
   length: 23
   regexp: '[A-Z]{4}[A-Z0-9]{15}'
-  regex2: '([A-Z]{4})([A-Z0-9]{15})'
+  regex2: '(?<bank_identifier>[A-Z]{4})(?<account_number>[A-Z0-9]{15})'
 
 gl:
   length: 18
@@ -124,7 +124,7 @@ gr: # Greece
 gt: # Guatemala
   length: 28
   regexp: '[A-Z0-9]{4}[A-Z0-9]{20}'
-  regex2: '[A-Z0-9]{4}[A-Z0-9]{20}'
+  regex2: '(?<bank_identifier>[A-Z0-9]{4})(?<account_number>[A-Z0-9]{20})'
 
 hu: # Hungary
   length: 28
@@ -159,32 +159,32 @@ kz: # Kazakhstan
 kw: # Kuwait
   length: 30
   regexp: '[A-Z]{4}[A-Z0-9]{22}'
-  regex2: '[A-Z]{4}[A-Z0-9]{22}'
+  regex2: '(?<bank_identifier>[A-Z]{4})(?<account_number>[A-Z0-9]{22})'
 
 lv: # Latvia
   length: 21
-  regexp: '[A-z]{4}[A-Z0-9]{13}'
-  regex2: '[A-z]{4}[A-Z0-9]{13}'
+  regexp: '[A-Z]{4}[A-Z0-9]{13}'
+  regex2: '(?<bank_identifier>[A-Z]{4})(?<account_number>[A-Z0-9]{13})'
 
 lb: # Lebanon
   length: 28
   regexp: '\d{4}[A-Z0-9]{20}'
-  regex2: '\d{4}[A-Z0-9]{20}'
+  regex2: '(?<bank_identifier>\d{4})(?<account_number>[A-Z0-9]{20})'
 
 li: # Liechtenstein
   length: 21
   regexp: '\d{5}[A-Z0-9]{12}'
-  regex2: '\d{5}[A-Z0-9]{12}'
+  regex2: '(?<bank_identifier>\d{5})(?<account_number>[A-Z0-9]{12})'
 
 lt: # Lithuania
   length: 20
   regexp: '\d{16}'
-  regex2: '(\d{5})(\d{11})'
+  regex2: '(?<bank_identifier>\d{5})(?<account_number>\d{11})'
 
 lu: # Luxembourg
   length: 20
   regexp: '\d{3}[A-Z0-9]{13}'
-  regex2: '\d{3}[A-Z0-9]{13}'
+  regex2: '(?<bank_identifier>\d{3})(?<account_number>[A-Z0-9]{13})'
 
 mk: # Macedonia
   length: 19
@@ -214,7 +214,7 @@ mc: # Monaco
 md: # Moldova
   length: 24
   regexp: '[A-Z0-9]{2}\d{18}'
-  regex2: '([A-Z0-9]{2})(\d{18})'
+  regex2: '(?<bank_identifier>[A-Z0-9]{2})(?<account_number>\d{18})'
 
 me: # Montenegro
   length: 22
@@ -224,7 +224,7 @@ me: # Montenegro
 nl: # Netherlands
   length: 18
   regexp: '[A-Z]{4}\d{10}'
-  regex2: '[A-Z]{4}\d{10}'
+  regex2: '(?<bank_identifier>[A-Z]{4})(?<account_number>\d{10})'
   
 'no': # Norway
   length: 15
@@ -234,17 +234,17 @@ nl: # Netherlands
 pk: # Pakistan
   length: 24
   regexp: '[A-Z0-9]{4}\d{16}'
-  regex2: '[A-Z0-9]{4}\d{16}'
+  regex2: '(?<bank_identifier>[A-Z0-9]{4})(?<account_number>\d{16})'
   
 ps: # Palestine
   length: 29
   regexp: '[A-Z0-9]{4}\d{21}'
-  regex2: '[A-Z0-9]{4}\d{21}'
+  regex2: '(?<bank_identifier>[A-Z0-9]{4})(?<account_number>\d{21})'
   
 pl: # Poland
   length: 28
   regexp: '\d{24}'
-  regex2: '(\d{8})(\d{16})'
+  regex2: '(?<bank_identifier>\d{8})(?<account_number>\d{16})'
   
 pt: # Portugal
   length: 25
@@ -254,7 +254,7 @@ pt: # Portugal
 ro: # Romania
   length: 24
   regexp: '[A-Z]{4}[A-Z0-9]{16}'
-  regex2: '[A-Z]{4}[A-Z0-9]{16}'
+  regex2: '(?<bank_identifier>[A-Z]{4})(?<account_number>[A-Z0-9]{16})'
 
 sm: # San Marino
   length: 27
@@ -264,7 +264,7 @@ sm: # San Marino
 sa: # Saudi Arabia
   length: 24
   regexp: '\d{2}[A-Z0-9]{18}'
-  regex2: '\d{2}[A-Z0-9]{18}'
+  regex2: '(?<bank_identifier>\d{2})(?<account_number>[A-Z0-9]{18})'
 
 rs: # Serbia
   length: 22
