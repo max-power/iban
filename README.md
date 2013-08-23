@@ -3,6 +3,7 @@
 IBAN information, validation and formatting.
 Ships with an ActiveModel validator.
 
+[![Gem Version](https://badge.fury.io/rb/IBAN.png)](http://badge.fury.io/rb/IBAN)
 [![Build Status](https://travis-ci.org/max-power/iban.png?branch=master)](https://travis-ci.org/max-power/iban)
 
 ## Installation
