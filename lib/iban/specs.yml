@@ -68,7 +68,7 @@ cz: # Czech Republic
   
 de: # Germany
   length: 22
-  regexp: '\d{18}' # 
+  regexp: '\d{18}'
   regex2: '(?<bank_identifier>\d{8})(?<account_number>\d{10})'
   
 dk: # Denmark
@@ -284,7 +284,7 @@ si: # Slovenia
 es: # Spain
   length: 24
   regexp: '\d{20}'
-  regex2: '(?<bank_identifier>\d{4})(?<branch_identifier>\d{4})(\d{1})(\d{1})(?<account_number>\d{10})'
+  regex2: '(?<bank_identifier>\d{4})(?<branch_identifier>\d{4})(?<national_check_digits>\d{1}\d{1})(?<account_number>\d{10})'
   
 se: # Sweden
   length: 24
