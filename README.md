@@ -22,11 +22,11 @@ Or install it yourself as:
 
     iban = IBAN.new("DE89 3704 0044 0532 0130 00")
 
-    iban.country_code    # GR
-    iban.check_digits    # 89
-    iban.bban            # 370400440532013000
-    iban.account_number  # 0532013000
-    iban.bank_identifier # 37040044
+    iban.country_code    # "GR"
+    iban.check_digits    # "89"
+    iban.bban            # "370400440532013000"
+    iban.account_number  # "0532013000"
+    iban.bank_identifier # "37040044"
 
     iban.valid?          # true
 
