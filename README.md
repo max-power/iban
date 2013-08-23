@@ -8,7 +8,7 @@ IBAN validation and formatting
 
 Add this line to your application's Gemfile:
 
-    gem 'iban'
+    gem 'IBAN'
 
 And then execute:
 
@@ -16,26 +16,28 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install iban
+    $ gem install IBAN
 
 ## Usage
 
-    iban = IBAN.new('GR16 0110 1250 0000 0001 2300 695')
+    iban = IBAN.new("DE89 3704 0044 0532 0130 00")
 
-    iban.country_code # GR
-    iban.check_digits # 16
-    iban.bban         # 01101250000000012300695
+    iban.country_code    # GR
+    iban.check_digits    # 89
+    iban.bban            # 370400440532013000
+    iban.account_number  # 0532013000
+    iban.bank_identifier # 37040044
 
-    iban.valid?       # true
+    iban.valid?          # true
 
-    iban.to_s         # 'GR1601101250000000012300695'
-    iban.to_s(true)   # 'GR16 0110 1250 0000 0001 2300 695'
+    iban.to_s            # "DE89370400440532013000"
+    iban.to_s(true)      # "DE89 3704 0044 0532 0130 00"
 
-    iban.to_i         # 1101250000000012300695162716
+    iban.to_i            # 370400440532013000131489
     
     # or 
     
-    IBAN.valid? 'GR16 0110 1250 0000 0001 2300 695' # true
+    IBAN.valid? "DE89 3704 0044 0532 0130 00" # true
 
 
 ## Contributing
