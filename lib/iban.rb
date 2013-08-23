@@ -66,7 +66,7 @@ class IBAN
   end
   
   def bban_data
-    @bban_data ||= Regexp.new("^#{specification['regex2']}$").match(bban) if specification
+    @bban_data ||= Regexp.new("^#{specification['regexp']}$").match(bban) if specification
   end
   
   def method_missing(method_name, *args)
