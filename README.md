@@ -1,6 +1,7 @@
 # International Bank Account Number
 
-IBAN validation and formatting
+IBAN information, validation and formatting.
+Ships with an ActiveModel validator.
 
 [![Build Status](https://travis-ci.org/max-power/iban.png?branch=master)](https://travis-ci.org/max-power/iban)
 
