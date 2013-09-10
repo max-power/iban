@@ -38,6 +38,14 @@ describe IBAN do
   it "should convert to formatted string" do
     @iban.to_s(true).must_equal 'FR14 2004 1010 0505 0001 3M02 606'
   end
+
+  it "should respond_to? account_number" do
+    @iban.respond_to?(:account_number).must_equal true
+  end
+
+  it "should return account_number" do
+    @iban.account_number.must_equal "0500013M026"
+  end
   
   [
     "AL47212110090000000235698741",
