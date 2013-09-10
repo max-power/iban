@@ -55,10 +55,6 @@ class IBAN
     !!bban_data
   end
 
-  def respond_to_missing?(method_name, include_private=false)
-    (bban_data && bban_data.names.include?(method_name.to_s)) || super
-  end
-    
   private
   
   def specification
@@ -71,5 +67,9 @@ class IBAN
   
   def method_missing(method_name, *args)
     respond_to?(method_name) ? bban_data[method_name] : super
+  end
+  
+  def respond_to_missing?(method_name, include_private=false)
+    (bban_data && bban_data.names.include?(method_name.to_s)) || super
   end
 end
