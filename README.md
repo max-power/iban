@@ -41,6 +41,15 @@ Or install it yourself as:
     
     IBAN.valid? "DE89 3704 0044 0532 0130 00" # true
 
+or as ActiveModel Validator (make sure you have 'active_model' before 'vat_id' in your Gemfile)
+
+    class Company
+      include ActiveModel::Model
+      attr_accessor :iban, :name
+      validates :iban, iban: true
+    end
+
+
 
 ## Contributing
 

@@ -5,4 +5,6 @@ require 'bundler/setup'
 require 'minitest/autorun'
 require 'minitest/spec'
 begin; require 'turn/autorun'; rescue LoadError; end
+
+require 'active_model'
 require 'iban'

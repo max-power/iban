@@ -1,8 +1,10 @@
-require 'yaml'
+require "yaml"
+require "iban/version"
+require "iban/validator" if defined? ActiveModel
 
 class IBAN
   def self.specifications
-    @@specs ||= YAML.load_file(File.expand_path('iban/specs.yml', File.dirname(__FILE__)))
+    @@specs ||= YAML.load_file(File.expand_path("iban/specs.yml", File.dirname(__FILE__)))
   end
   
   def self.valid?(code)
