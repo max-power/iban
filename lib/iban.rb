@@ -12,7 +12,7 @@ class IBAN
   end
   
   def initialize(code)
-    @code = code.strip.gsub(/\s+/, '').upcase
+    @code = code.to_s.strip.gsub(/\s+/, '').upcase
   end
   
   def country_code
