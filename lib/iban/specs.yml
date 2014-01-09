@@ -139,7 +139,7 @@ is: # Iceland
 ie: # Ireland
   length: 22
 #  regexp: '[A-Z0-9]{4}\d{14}'
-  regexp: '(?<branch_identifier>[A-Z0-9]{4})(?<branch_identifier>\d{6})(?<account_number>\d{8})'
+  regexp: '(?<bank_identifier>[A-Z0-9]{4})(?<branch_identifier>\d{6})(?<account_number>\d{8})'
 
 il: # Israel
   length: 23
